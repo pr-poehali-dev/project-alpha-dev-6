@@ -44,9 +44,7 @@ export function ProcessSection() {
           <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
             Как мы работаем
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-[#404040]">
-            От заявки до <span className="text-primary">первых лидов</span>
-          </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-[#404040]">От начала до первых лидов</h2>
           <p className="text-lg text-[#404040]/70 max-w-3xl mx-auto leading-relaxed font-medium">
             Прозрачный процесс без лишних шагов — вы видите каждый этап и всегда знаете, что происходит с вашим бюджетом.
           </p>
