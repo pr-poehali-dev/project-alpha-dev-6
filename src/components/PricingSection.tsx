@@ -1,69 +1,71 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
-import { QuoteFormDialog } from "@/components/QuoteFormDialog"
+import { Button } from "@/components/ui/button"
 
 const pricingTiers = [
   {
-    name: "Базовый",
-    price: "99 900",
+    name: "Старт",
+    leads: "30–50 лидов",
+    period: "в месяц",
     features: [
-      "До 5 страниц",
-      "Адаптивный дизайн",
-      "Базовая SEO-оптимизация",
-      "Форма обратной связи",
-      "1 месяц поддержки",
+      "Одно направление на выбор",
+      "Запуск за 24 часа",
+      "Замена нецелевых лидов",
+      "Личный менеджер",
+      "Ежедневная отчётность",
     ],
     highlighted: false,
+    cta: "Начать",
   },
   {
-    name: "Про",
-    price: "249 900",
+    name: "Рост",
+    leads: "50–120 лидов",
+    period: "в месяц",
     features: [
-      "До 15 страниц",
-      "Премиум-дизайн",
-      "Расширенная SEO-оптимизация",
-      "Интеграция CMS",
-      "Функционал e-commerce",
-      "3 месяца поддержки",
+      "Одно–два направления",
+      "Запуск за 24 часа",
+      "Замена нецелевых лидов",
+      "Приоритетный менеджер",
+      "Прогноз по продажам",
+      "Аналитика по каждому лиду",
     ],
     highlighted: true,
+    cta: "Выбрать",
   },
   {
-    name: "Индивидуальный",
-    price: "По запросу",
+    name: "Масштаб",
+    leads: "120+ лидов",
+    period: "в месяц",
     features: [
-      "Неограниченно страниц",
-      "Кастомный функционал",
-      "API-интеграции",
-      "Персональный менеджер",
-      "6 месяцев поддержки",
+      "Все направления",
+      "Запуск за 24 часа",
+      "Полная гарантия качества",
+      "Выделенная команда",
+      "Кастомная стратегия",
+      "Интеграция с вашей CRM",
     ],
     highlighted: false,
+    cta: "Обсудить",
   },
 ]
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      </div>
-
+    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Прозрачные цены
+            Тарифы
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance">
-            Выберите <span className="text-primary">идеальный тариф</span> для вашего проекта
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#404040]">
+            Выберите <span className="text-primary">объём лидов</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            От стартапов до крупного бизнеса — у нас есть подходящее решение
+          <p className="text-[#404040]/70 text-lg max-w-2xl mx-auto font-medium">
+            Гибкие условия под ваш план продаж. Точную стоимость рассчитываем индивидуально после брифинга.
           </p>
         </div>
 
@@ -73,56 +75,50 @@ export function PricingSection() {
               key={index}
               className={`relative group ${
                 tier.highlighted
-                  ? "border-primary shadow-xl scale-105 bg-gradient-to-b from-background to-primary/5"
-                  : "hover:border-primary/50 hover:shadow-lg"
+                  ? "border-primary border-2 shadow-xl bg-white scale-[1.02]"
+                  : "border border-border hover:border-primary/40 hover:shadow-lg bg-white"
               } transition-all duration-300`}
             >
               {tier.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
                   Популярный
                 </div>
               )}
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">
-                    {tier.price === "По запросу" ? (
-                      <span className="text-3xl">{tier.price}</span>
-                    ) : (
-                      <>
-                        <span className="text-lg font-normal text-muted-foreground">от </span>
-                        {tier.price}
-                        <span className="text-lg font-normal text-muted-foreground"> ₽</span>
-                      </>
-                    )}
-                  </span>
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-2xl font-black text-[#404040] mb-2">{tier.name}</CardTitle>
+                <div className="mt-3">
+                  <span className="text-3xl font-black text-primary">{tier.leads}</span>
+                  <div className="text-sm text-[#404040]/60 font-medium mt-1">{tier.period}</div>
                 </div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3 group/item">
-                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform" />
-                      <span className="text-sm leading-relaxed">{feature}</span>
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-[#404040]/80 leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <QuoteFormDialog
-                  packageName={tier.name}
-                  variant={tier.highlighted ? "default" : "outline"}
-                  className={`w-full ${tier.highlighted ? "shadow-lg shadow-primary/20" : ""}`}
+                <Button
+                  className={`w-full font-bold ${
+                    tier.highlighted
+                      ? "bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20"
+                      : "bg-primary/10 hover:bg-primary hover:text-white text-primary"
+                  } transition-all`}
+                  asChild
                 >
-                  {tier.price === "По запросу" ? "Связаться с нами" : "Выбрать тариф"}
-                </QuoteFormDialog>
+                  <a href="#contact">{tier.cta}</a>
+                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            Все тарифы включают <span className="text-primary font-semibold">бесплатную настройку хостинга</span> и{" "}
-            <span className="text-primary font-semibold">SSL-сертификат</span>
+        <div className="mt-10 text-center">
+          <p className="text-sm text-[#404040]/60 font-medium">
+            Нецелевые лиды{" "}
+            <span className="text-primary font-bold">заменяются бесплатно</span> во всех тарифах. Без скрытых условий.
           </p>
         </div>
       </div>

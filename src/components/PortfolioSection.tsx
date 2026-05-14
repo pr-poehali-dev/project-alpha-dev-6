@@ -1,89 +1,118 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { ExternalLink } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import Icon from "@/components/ui/icon"
 
-const projects = [
+const cases = [
   {
-    title: "Умный помощник по выборам",
-    category: "AI/ML и веб-разработка",
-    image: "/omgekeerdestemwijzer-banner.png",
+    niche: "Частные инвестиции",
+    nicheIcon: "TrendingUp",
+    company: "Инвестиционная платформа «АльфаКапитал»",
+    result: "847 лидов за 30 дней",
+    conversion: "Конверсия в сделку 8.4%",
     description:
-      "AI-приложение для выборов. Пользователи задают вопросы о позициях партий и получают 100% фактические ответы из официальных программ с использованием RAG-технологии.",
-    url: "https://de-omgekeerde-stemwijzer.onrender.com/",
-    tags: ["Next.js", "AI/ML", "RAG", "TypeScript"],
+      "Привлекали частных инвесторов с капиталом от 1 млн ₽. За месяц передали 847 квалифицированных контактов, 71 из которых стали реальными клиентами.",
+    metrics: [
+      { label: "Лидов", value: "847" },
+      { label: "Сделок", value: "71" },
+      { label: "Средний чек", value: "2.3 млн ₽" },
+    ],
+    tag: "Инвестиции",
   },
   {
-    title: "Автомойка Tahsin",
-    category: "Веб-дизайн и разработка",
-    image: "/autopoetsbedrijf-tahsin-project.png",
+    niche: "Франшизы",
+    nicheIcon: "Store",
+    company: "Сеть кофеен «МорнингКофе»",
+    result: "120 лидов за 14 дней",
+    conversion: "Конверсия в договор 12%",
     description:
-      "Профессиональный сайт для автомойки с 20-летним опытом. Полная презентация услуг, автомойки и гаража с современным адаптивным дизайном.",
-    url: "https://www.autopoetsbedrijftahsin.nl/",
-    tags: ["React", "Next.js", "Tailwind CSS"],
+      "Задача — открыть 15 новых точек по франшизе за квартал. Запустили лидогенерацию, за 2 недели получили 120 целевых заявок от предпринимателей.",
+    metrics: [
+      { label: "Лидов", value: "120" },
+      { label: "Договоров", value: "14" },
+      { label: "Срок старта", value: "24 ч" },
+    ],
+    tag: "Франшизы",
   },
   {
-    title: "Кадровое агентство CAN",
-    category: "Веб-разработка",
-    image: "/can-uitzendbureau-project.png",
+    niche: "Недвижимость",
+    nicheIcon: "Building2",
+    company: "Застройщик «ГрандСтрой»",
+    result: "312 лидов за 45 дней",
+    conversion: "7 объектов продано",
     description:
-      "Кадровое агентство с 30-летним опытом в садоводческом секторе. Сайт с обзором услуг и прямыми контактами для работодателей и соискателей.",
-    url: "https://canbv.nl/",
-    tags: ["Next.js", "React", "Tailwind CSS"],
+      "Генерировали лиды покупателей новостроек в Москве и МО. Работали с аудиторией с ипотечным одобрением — конверсия из лида в просмотр объекта 34%.",
+    metrics: [
+      { label: "Лидов", value: "312" },
+      { label: "Продаж", value: "7" },
+      { label: "ROI", value: "810%" },
+    ],
+    tag: "Недвижимость",
   },
   {
-    title: "Портфолио Murat Sahin",
-    category: "Портфолио-сайт",
-    image: "/murat-sahin-portfolio.png",
+    niche: "Частные инвестиции",
+    nicheIcon: "TrendingUp",
+    company: "Управляющая компания «Вектор»",
+    result: "200+ лидов в месяц",
+    conversion: "Рост выручки 2.4х",
     description:
-      "Профессиональное портфолио full-stack разработчика. Демонстрация проектов, навыков и опыта с современным минималистичным дизайном и темной темой.",
-    url: "https://murat-sahin-dev.vercel.app/",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", ".NET Core"],
+      "Вышли на стабильный поток 200+ квалифицированных инвесторов в месяц. Масштабировались с нуля до оборота 40 млн ₽ за 6 месяцев совместной работы.",
+    metrics: [
+      { label: "Лидов/мес", value: "200+" },
+      { label: "Рост выручки", value: "2.4×" },
+      { label: "Срок", value: "6 мес" },
+    ],
+    tag: "Инвестиции",
   },
 ]
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="cases" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">Наше портфолио</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Ознакомьтесь с подборкой наших последних проектов и узнайте, как мы помогаем бизнесу расти с помощью мощных цифровых решений.
+          <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+            Кейсы
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-[#404040]">
+            Реальные результаты
+          </h2>
+          <p className="text-lg text-[#404040]/70 max-w-3xl mx-auto leading-relaxed font-medium">
+            Не обещания, а цифры. Посмотрите, что мы сделали для компаний в ваших нишах.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {cases.map((item, index) => (
             <Card
               key={index}
-              className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300"
+              className="group border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 overflow-hidden bg-white"
             >
-              <div className="relative overflow-hidden aspect-video">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    className="gap-2"
-                    onClick={() => window.open(project.url, "_blank")}
-                  >
-                    Открыть проект <ExternalLink className="h-4 w-4" />
-                  </Button>
+              <CardContent className="p-8">
+                <div className="flex items-start justify-between mb-5">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-xl bg-primary/10 group-hover:bg-primary transition-all duration-300">
+                      <Icon name={item.nicheIcon} fallback="TrendingUp" size={20} className="text-primary group-hover:text-white transition-colors" />
+                    </div>
+                    <div>
+                      <Badge variant="secondary" className="text-xs font-semibold bg-primary/10 text-primary border-0 mb-1">
+                        {item.tag}
+                      </Badge>
+                      <p className="text-sm font-bold text-[#404040]">{item.company}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <CardContent className="p-6">
-                <p className="text-sm text-primary font-semibold mb-2">{project.category}</p>
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground">
-                      {tag}
-                    </span>
+
+                <h3 className="text-xl font-black text-primary mb-1">{item.result}</h3>
+                <p className="text-sm text-[#404040]/60 font-semibold mb-4">{item.conversion}</p>
+
+                <p className="text-[#404040]/70 text-sm leading-relaxed mb-6">{item.description}</p>
+
+                <div className="grid grid-cols-3 gap-3 border-t border-border pt-5">
+                  {item.metrics.map((m, mi) => (
+                    <div key={mi} className="text-center">
+                      <div className="text-lg font-black text-[#404040]">{m.value}</div>
+                      <div className="text-xs text-[#404040]/55 font-medium mt-0.5">{m.label}</div>
+                    </div>
                   ))}
                 </div>
               </CardContent>

@@ -1,75 +1,60 @@
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/30 py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="border-t border-border bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">CodeCraft</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              2025 CodeCraft. Все права защищены.
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-1 mb-3">
+              <span className="text-xl font-black text-[#404040]">Вам</span>
+              <span className="text-xl font-black text-primary">Лям!</span>
+            </div>
+            <p className="text-sm text-[#404040]/60 leading-relaxed max-w-xs">
+              B2B лидогенерация в нишах частных инвестиций, франшиз и недвижимости. С 2018 года помогаем компаниям расти.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Навигация</h4>
+            <h4 className="font-black text-[#404040] mb-4 text-sm uppercase tracking-wide">Навигация</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  О нас
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Услуги
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Портфолио
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Контакты
-                </a>
-              </li>
+              {[
+                { href: "#about", label: "О компании" },
+                { href: "#services", label: "Направления" },
+                { href: "#cases", label: "Кейсы" },
+                { href: "#pricing", label: "Тарифы" },
+                { href: "#contact", label: "Контакты" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a href={item.href} className="text-sm text-[#404040]/60 hover:text-primary transition-colors font-medium">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Мы в соцсетях</h4>
-            <div className="flex gap-4">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </a>
-            </div>
+            <h4 className="font-black text-[#404040] mb-4 text-sm uppercase tracking-wide">Направления</h4>
+            <ul className="space-y-2">
+              {[
+                { to: "/investments", label: "Частные инвестиции" },
+                { to: "/franchise", label: "Франшизы" },
+                { to: "/realty", label: "Недвижимость" },
+              ].map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="text-sm text-[#404040]/60 hover:text-primary transition-colors font-medium">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+        </div>
+
+        <div className="border-t border-border mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+          <p className="text-xs text-[#404040]/50">© 2025 Вам Лям! Все права защищены.</p>
+          <p className="text-xs text-[#404040]/50">B2B лидогенерация с 2018 года</p>
         </div>
       </div>
     </footer>

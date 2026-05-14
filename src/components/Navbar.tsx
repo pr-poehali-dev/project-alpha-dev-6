@@ -1,6 +1,6 @@
-import { ThemeToggle } from "@/components/ThemeToggle"
 import { Logo } from "@/components/Logo"
 import { MobileMenu } from "@/components/MobileMenu"
+import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 
 export function Navbar() {
@@ -17,7 +17,7 @@ export function Navbar() {
   return (
     <nav
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
+        isScrolled ? "bg-white/95 backdrop-blur-lg border-b border-border shadow-sm" : "bg-white border-b border-border/40"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,26 +26,28 @@ export function Navbar() {
             <Logo />
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">
+          <div className="hidden md:flex items-center gap-7">
+            <a href="#about" className="text-sm font-semibold text-[#404040] hover:text-primary transition-colors">
               О нас
             </a>
-            <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">
-              Услуги
+            <a href="#services" className="text-sm font-semibold text-[#404040] hover:text-primary transition-colors">
+              Направления
             </a>
-            <a href="#portfolio" className="text-sm font-medium hover:text-primary transition-colors">
-              Портфолио
+            <a href="#cases" className="text-sm font-semibold text-[#404040] hover:text-primary transition-colors">
+              Кейсы
             </a>
-            <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#pricing" className="text-sm font-semibold text-[#404040] hover:text-primary transition-colors">
               Тарифы
-            </a>
-            <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
-              Контакты
             </a>
           </div>
 
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
+          <div className="flex items-center gap-3">
+            <Button
+              className="hidden md:flex bg-primary hover:bg-primary/90 text-white font-bold shadow-sm"
+              asChild
+            >
+              <a href="#contact">Получить лиды</a>
+            </Button>
             <MobileMenu />
           </div>
         </div>

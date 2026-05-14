@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,76 +6,74 @@
 
 @layer base {
   :root {
-    /* Custom color palette for CodeCraft light mode */
-    --background: 0 0% 99%;
-    --foreground: 240 10% 10%;
+    --background: 0 0% 97%; /* #f8f6fd approx */
+    --foreground: 0 0% 25%; /* #404040 */
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 10%;
+    --card-foreground: 0 0% 25%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
-    --primary: 350 100% 50%; /* Bright red #FF0035 */
+    --popover-foreground: 0 0% 25%;
+    --primary: 244 80% 53%; /* #392ae7 */
     --primary-foreground: 0 0% 100%;
-    --secondary: 240 5% 95%;
-    --secondary-foreground: 240 10% 10%;
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 5% 45%;
-    --accent: 350 100% 50%;
+    --secondary: 244 30% 95%;
+    --secondary-foreground: 0 0% 25%;
+    --muted: 244 20% 94%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 244 80% 53%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 350 100% 50%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 5% 90%;
-    --input: 240 5% 90%;
-    --ring: 350 100% 50%;
+    --border: 244 15% 88%;
+    --input: 244 15% 88%;
+    --ring: 244 80% 53%;
     --radius: 0.5rem;
-    --chart-1: 350 100% 50%;
-    --chart-2: 240 5% 35%;
-    --chart-3: 240 5% 45%;
-    --chart-4: 240 5% 55%;
-    --chart-5: 240 5% 65%;
+    --chart-1: 244 80% 53%;
+    --chart-2: 244 30% 65%;
+    --chart-3: 244 20% 75%;
+    --chart-4: 244 15% 80%;
+    --chart-5: 244 10% 85%;
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5% 26%;
-    --sidebar-primary: 240 5% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 5% 96%;
-    --sidebar-accent-foreground: 240 5% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 244 80% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 244 20% 94%;
+    --sidebar-accent-foreground: 0 0% 25%;
+    --sidebar-border: 244 15% 88%;
+    --sidebar-ring: 244 80% 53%;
   }
 
   .dark {
-    /* Custom color palette for CodeCraft dark mode */
-    --background: 240 10% 9%; /* #0E131F */
-    --foreground: 0 0% 98%;
-    --card: 240 10% 13%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 11%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 350 100% 50%; /* Bright red #FF0035 */
+    --background: 0 0% 97%;
+    --foreground: 0 0% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 25%;
+    --primary: 244 80% 53%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 240 10% 22%; /* #38405F */
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 10% 26%; /* #59546C */
-    --muted-foreground: 240 5% 55%; /* #8B939C */
-    --accent: 350 100% 50%;
+    --secondary: 244 30% 95%;
+    --secondary-foreground: 0 0% 25%;
+    --muted: 244 20% 94%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 244 80% 53%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 350 100% 50%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 10% 22%;
-    --input: 240 10% 22%;
-    --ring: 350 100% 50%;
-    --chart-1: 350 100% 50%;
-    --chart-2: 240 10% 35%;
-    --chart-3: 240 10% 45%;
-    --chart-4: 240 10% 55%;
-    --chart-5: 240 10% 65%;
-    --sidebar-background: 240 5% 10%;
-    --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: 217 76% 48%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4% 27%;
-    --sidebar-accent-foreground: 240 5% 96%;
-    --sidebar-border: 240 4% 27%;
-    --sidebar-ring: 217 91% 44%;
+    --border: 244 15% 88%;
+    --input: 244 15% 88%;
+    --ring: 244 80% 53%;
+    --chart-1: 244 80% 53%;
+    --chart-2: 244 30% 65%;
+    --chart-3: 244 20% 75%;
+    --chart-4: 244 15% 80%;
+    --chart-5: 244 10% 85%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 244 80% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 244 20% 94%;
+    --sidebar-accent-foreground: 0 0% 25%;
+    --sidebar-border: 244 15% 88%;
+    --sidebar-ring: 244 80% 53%;
   }
 }
 
@@ -86,6 +84,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    background-color: #f8f6fd;
   }
 }
 

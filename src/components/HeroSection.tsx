@@ -1,143 +1,92 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles, Code2, Palette } from "lucide-react"
-import { useEffect, useState } from "react"
+import { ArrowRight, TrendingUp, Shield, Clock } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export function HeroSection() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
-
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute w-[500px] h-[500px] rounded-full bg-muted/40 blur-3xl animate-pulse"
-          style={{
-            top: "20%",
-            left: "10%",
-            animationDuration: "4s",
-          }}
-        />
-        <div
-          className="absolute w-[400px] h-[400px] rounded-full bg-muted/30 blur-3xl animate-pulse"
-          style={{
-            bottom: "10%",
-            right: "15%",
-            animationDuration: "6s",
-            animationDelay: "1s",
-          }}
-        />
-        {/* Subtle mouse-following gradient */}
-        <div
-          className="absolute w-[300px] h-[300px] rounded-full bg-muted/20 blur-3xl transition-all duration-1000 ease-out"
-          style={{
-            left: `${mousePosition.x - 150}px`,
-            top: `${mousePosition.y - 150}px`,
-          }}
-        />
-      </div>
-
-      <div className="absolute inset-0 pointer-events-none">
-        <Code2
-          className="absolute text-muted-foreground/30 animate-float"
-          style={{
-            top: "15%",
-            left: "15%",
-            animationDelay: "0s",
-          }}
-          size={40}
-        />
-        <Palette
-          className="absolute text-muted-foreground/30 animate-float"
-          style={{
-            top: "25%",
-            right: "20%",
-            animationDelay: "2s",
-          }}
-          size={35}
-        />
-        <Sparkles
-          className="absolute text-muted-foreground/30 animate-float"
-          style={{
-            bottom: "20%",
-            left: "20%",
-            animationDelay: "1s",
-          }}
-          size={30}
-        />
-      </div>
-
+    <section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
       <div className="container mx-auto text-center max-w-5xl relative z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in-up">
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-primary">Профессиональный веб-дизайн и разработка</span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-fade-in-up">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          <span className="text-sm font-semibold text-primary">B2B лидогенерация с 2018 года</span>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-fade-in-up text-balance">
-          Сайты, которые{" "}
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight mb-6 animate-fade-in-up text-[#404040] leading-[1.05]">
+          До 120 клиентов{" "}
           <span className="text-primary relative inline-block">
-            впечатляют
+            за 24 часа
             <svg
               className="absolute -bottom-2 left-0 w-full"
-              height="12"
-              viewBox="0 0 200 12"
+              height="8"
+              viewBox="0 0 200 8"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M2 10C50 5 150 5 198 10"
-                stroke="currentColor"
+                d="M2 6C50 2 150 2 198 6"
+                stroke="#392ae7"
                 strokeWidth="3"
                 strokeLinecap="round"
-                className="text-primary"
               />
             </svg>
           </span>
         </h1>
 
-        <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto animate-fade-in-up animate-delay-100 leading-relaxed">
-          От концепции до запуска. Мы создаем современные, быстрые и результативные сайты, которые выводят ваш бизнес на новый уровень.
+        <p className="text-xl sm:text-2xl text-[#404040]/70 mb-10 max-w-3xl mx-auto animate-fade-in-up animate-delay-100 leading-relaxed font-medium">
+          Определяем наиболее эффективный канал, рассчитываем прогноз и передаём качественные лиды в нишах частных инвестиций, франшиз и недвижимости.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animate-delay-200 mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animate-delay-200 mb-14">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg group shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
+            className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-6 text-lg group shadow-lg shadow-primary/25 hover:shadow-xl transition-all"
             asChild
           >
             <a href="#contact">
-              Начать проект
+              Получить лиды
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-primary/20 text-foreground hover:bg-primary/5 hover:border-primary font-semibold px-8 py-6 text-lg backdrop-blur-sm bg-transparent"
+            className="border-2 border-primary/30 text-[#404040] hover:bg-primary/5 hover:border-primary font-semibold px-8 py-6 text-lg"
             asChild
           >
-            <a href="#portfolio">Наши работы</a>
+            <a href="#cases">Наши кейсы</a>
           </Button>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground animate-fade-in-up animate-delay-300">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span>50+ проектов</span>
+        <div className="flex flex-wrap justify-center items-center gap-10 animate-fade-in-up animate-delay-300">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-primary/10">
+              <TrendingUp className="h-5 w-5 text-primary" />
+            </div>
+            <div className="text-left">
+              <div className="font-bold text-[#404040] text-sm">250+ компаний</div>
+              <div className="text-xs text-[#404040]/60">помогли вырасти</div>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: "0.5s" }} />
-            <span>45+ довольных клиентов</span>
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-primary/10">
+              <Shield className="h-5 w-5 text-primary" />
+            </div>
+            <div className="text-left">
+              <div className="font-bold text-[#404040] text-sm">3.5+ млрд ₽</div>
+              <div className="text-xs text-[#404040]/60">привлечённых инвестиций</div>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: "1s" }} />
-            <span>3+ года опыта</span>
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-primary/10">
+              <Clock className="h-5 w-5 text-primary" />
+            </div>
+            <div className="text-left">
+              <div className="font-bold text-[#404040] text-sm">Старт за 24 ч</div>
+              <div className="text-xs text-[#404040]/60">с гарантией качества</div>
+            </div>
           </div>
         </div>
       </div>
