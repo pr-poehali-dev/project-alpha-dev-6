@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import Icon from "@/components/ui/icon"
-import { EditableText } from "@/components/EditableText"
-import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 const testimonials = [
   {
@@ -44,7 +42,6 @@ const testimonials = [
 
 export function TestimonialsSection() {
   const scrollRef = useRef<HTMLDivElement>(null)
-  const headRef = useScrollReveal()
 
   useEffect(() => {
     const scrollContainer = scrollRef.current
@@ -52,7 +49,7 @@ export function TestimonialsSection() {
 
     let animationFrameId: number
     let scrollPosition = 0
-    const scrollSpeed = 0.4
+    const scrollSpeed = 0.5
 
     const scroll = () => {
       scrollPosition += scrollSpeed
@@ -73,36 +70,33 @@ export function TestimonialsSection() {
   }, [])
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f8f6fd] overflow-hidden">
       <div className="container mx-auto max-w-7xl">
-        <div ref={headRef} className="reveal text-center mb-14">
+        <div className="text-center mb-14">
           <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-            <EditableText as="span">Отзывы клиентов</EditableText>
+            Отзывы клиентов
           </div>
-          <EditableText as="h2" className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#404040] mb-4">
             Говорят наши клиенты
-          </EditableText>
-          <EditableText as="p" className="text-center text-foreground/65 max-w-2xl mx-auto font-medium">
+          </h2>
+          <p className="text-center text-[#404040]/70 max-w-2xl mx-auto font-medium">
             Более 250 компаний уже получили результат. Вот что они говорят о работе с нами.
-          </EditableText>
+          </p>
         </div>
 
         <div className="relative">
           <div ref={scrollRef} className="flex gap-6 overflow-x-hidden" style={{ scrollBehavior: "auto" }}>
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <Card key={index} className="flex-shrink-0 w-[90vw] sm:w-[450px] border border-border shadow-sm bg-card">
+              <Card key={index} className="flex-shrink-0 w-[90vw] sm:w-[450px] border border-border shadow-sm bg-white">
                 <CardContent className="p-8">
                   <Icon name="Quote" size={28} className="text-primary mb-4" />
-                  <EditableText
-                    as="p"
-                    className="text-base sm:text-lg mb-6 leading-relaxed text-foreground min-h-[100px] font-medium"
-                  >
+                  <p className="text-base sm:text-lg mb-6 leading-relaxed text-[#404040] min-h-[100px] font-medium">
                     "{testimonial.quote}"
-                  </EditableText>
+                  </p>
                   <div className="flex items-center justify-between">
                     <div>
-                      <EditableText as="p" className="font-black text-foreground">{testimonial.name}</EditableText>
-                      <EditableText as="p" className="text-foreground/55 text-sm">{testimonial.role}</EditableText>
+                      <p className="font-black text-[#404040]">{testimonial.name}</p>
+                      <p className="text-[#404040]/60 text-sm">{testimonial.role}</p>
                     </div>
                     <span className="text-xs font-semibold px-3 py-1 rounded-full bg-primary/10 text-primary">
                       {testimonial.niche}

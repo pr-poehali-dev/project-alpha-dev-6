@@ -51,7 +51,7 @@ const testimonials = [
 
 export default function InvestmentsPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-[#f8f6fd]">
       <Navbar />
 
       {/* Hero */}
@@ -87,9 +87,9 @@ export default function InvestmentsPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f6fd]">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="font-display text-3xl sm:text-4xl font-black text-foreground text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-black text-[#404040] text-center mb-12">
             Почему выбирают нас
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -129,9 +129,9 @@ export default function InvestmentsPage() {
       </section>
 
       {/* Cases */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f6fd]">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="font-display text-3xl sm:text-4xl font-black text-foreground text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-black text-[#404040] text-center mb-12">
             Кейсы в нише инвестиций
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -165,7 +165,7 @@ export default function InvestmentsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((t, i) => (
-              <Card key={i} className="border border-border bg-background">
+              <Card key={i} className="border border-border bg-[#f8f6fd]">
                 <CardContent className="p-8">
                   <Icon name="Quote" size={24} className="text-primary mb-4" />
                   <p className="text-[#404040] leading-relaxed mb-6 font-medium">"{t.quote}"</p>

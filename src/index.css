@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,73 +6,73 @@
 
 @layer base {
   :root {
-    --background: 0 0% 93%;
-    --foreground: 0 0% 18%;
-    --card: 0 0% 99%;
-    --card-foreground: 0 0% 18%;
-    --popover: 0 0% 99%;
-    --popover-foreground: 0 0% 18%;
-    --primary: 244 80% 53%;
+    --background: 0 0% 97%; /* #f8f6fd approx */
+    --foreground: 0 0% 25%; /* #404040 */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 25%;
+    --primary: 244 80% 53%; /* #392ae7 */
     --primary-foreground: 0 0% 100%;
-    --secondary: 244 20% 94%;
-    --secondary-foreground: 0 0% 18%;
-    --muted: 0 0% 90%;
+    --secondary: 244 30% 95%;
+    --secondary-foreground: 0 0% 25%;
+    --muted: 244 20% 94%;
     --muted-foreground: 0 0% 45%;
     --accent: 244 80% 53%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 86%;
-    --input: 0 0% 86%;
+    --border: 244 15% 88%;
+    --input: 244 15% 88%;
     --ring: 244 80% 53%;
-    --radius: 0.625rem;
+    --radius: 0.5rem;
     --chart-1: 244 80% 53%;
     --chart-2: 244 30% 65%;
     --chart-3: 244 20% 75%;
     --chart-4: 244 15% 80%;
     --chart-5: 244 10% 85%;
-    --sidebar-background: 0 0% 96%;
-    --sidebar-foreground: 0 0% 18%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 25%;
     --sidebar-primary: 244 80% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 244 20% 94%;
-    --sidebar-accent-foreground: 0 0% 18%;
-    --sidebar-border: 0 0% 86%;
+    --sidebar-accent-foreground: 0 0% 25%;
+    --sidebar-border: 244 15% 88%;
     --sidebar-ring: 244 80% 53%;
   }
 
   .dark {
-    --background: 0 0% 93%;
-    --foreground: 0 0% 18%;
-    --card: 0 0% 99%;
-    --card-foreground: 0 0% 18%;
-    --popover: 0 0% 99%;
-    --popover-foreground: 0 0% 18%;
+    --background: 0 0% 97%;
+    --foreground: 0 0% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 25%;
     --primary: 244 80% 53%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 244 20% 94%;
-    --secondary-foreground: 0 0% 18%;
-    --muted: 0 0% 90%;
+    --secondary: 244 30% 95%;
+    --secondary-foreground: 0 0% 25%;
+    --muted: 244 20% 94%;
     --muted-foreground: 0 0% 45%;
     --accent: 244 80% 53%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 86%;
-    --input: 0 0% 86%;
+    --border: 244 15% 88%;
+    --input: 244 15% 88%;
     --ring: 244 80% 53%;
     --chart-1: 244 80% 53%;
     --chart-2: 244 30% 65%;
     --chart-3: 244 20% 75%;
     --chart-4: 244 15% 80%;
     --chart-5: 244 10% 85%;
-    --sidebar-background: 0 0% 96%;
-    --sidebar-foreground: 0 0% 18%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 25%;
     --sidebar-primary: 244 80% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 244 20% 94%;
-    --sidebar-accent-foreground: 0 0% 18%;
-    --sidebar-border: 0 0% 86%;
+    --sidebar-accent-foreground: 0 0% 25%;
+    --sidebar-border: 244 15% 88%;
     --sidebar-ring: 244 80% 53%;
   }
 }
@@ -84,15 +84,15 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background-color: hsl(0, 0%, 93%);
+    background-color: #f8f6fd;
   }
 }
 
-/* Scroll reveal animation */
+/* Custom animations for scroll effects */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -100,51 +100,8 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .animate-fade-in-up {
-  animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .animate-delay-100 {
@@ -162,95 +119,25 @@
   opacity: 0;
 }
 
-.animate-delay-400 {
-  animation-delay: 0.4s;
-  opacity: 0;
-}
-
-.animate-delay-500 {
-  animation-delay: 0.5s;
-  opacity: 0;
-}
-
-/* Scroll-triggered reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.96);
-  transition:
-    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal-scale.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Float animation */
+/* Added floating animation for hero icons */
 @keyframes float {
   0%,
   100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-20px);
   }
 }
 
 .animate-float {
-  animation: float 5s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
-/* Pulse dot */
-@keyframes pulse-dot {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.15);
-  }
-}
-
-/* Grid pattern */
+/* Grid pattern for process section */
 .bg-grid-pattern {
   background-image:
     linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
     linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
   background-size: 40px 40px;
-}
-
-/* Editable text */
-[contenteditable="true"] {
-  outline: none;
-  border-radius: 4px;
-  transition:
-    background 0.2s ease,
-    box-shadow 0.2s ease;
-  cursor: text;
-}
-
-[contenteditable="true"]:hover {
-  background: rgba(57, 42, 231, 0.05);
-  box-shadow: 0 0 0 2px rgba(57, 42, 231, 0.15);
-}
-
-[contenteditable="true"]:focus {
-  background: rgba(57, 42, 231, 0.07);
-  box-shadow: 0 0 0 2px rgba(57, 42, 231, 0.35);
 }

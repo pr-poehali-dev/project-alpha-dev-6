@@ -7,16 +7,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-1 mb-3">
-              <span className="text-xl font-black text-foreground">Вам</span>
+              <span className="text-xl font-black text-[#404040]">Вам</span>
               <span className="text-xl font-black text-primary">Лям!</span>
             </div>
-            <p className="text-sm text-foreground/55 leading-relaxed max-w-xs">
+            <p className="text-sm text-[#404040]/60 leading-relaxed max-w-xs">
               B2B лидогенерация в нишах частных инвестиций, франшиз и недвижимости. С 2018 года помогаем компаниям расти.
             </p>
           </div>
 
           <div>
-            <h4 className="font-black text-foreground mb-4 text-sm uppercase tracking-wide">Навигация</h4>
+            <h4 className="font-black text-[#404040] mb-4 text-sm uppercase tracking-wide">Навигация</h4>
             <ul className="space-y-2">
               {[
                 { href: "#about", label: "О компании" },
@@ -26,7 +26,7 @@ export function Footer() {
                 { href: "#contact", label: "Контакты" },
               ].map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="text-sm text-foreground/55 hover:text-primary transition-colors font-medium">
+                  <a href={item.href} className="text-sm text-[#404040]/60 hover:text-primary transition-colors font-medium">
                     {item.label}
                   </a>
                 </li>
@@ -35,7 +35,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-black text-foreground mb-4 text-sm uppercase tracking-wide">Направления</h4>
+            <h4 className="font-black text-[#404040] mb-4 text-sm uppercase tracking-wide">Направления</h4>
             <ul className="space-y-2">
               {[
                 { to: "/investments", label: "Частные инвестиции" },
@@ -43,7 +43,7 @@ export function Footer() {
                 { to: "/realty", label: "Недвижимость" },
               ].map((item) => (
                 <li key={item.to}>
-                  <Link to={item.to} className="text-sm text-foreground/55 hover:text-primary transition-colors font-medium">
+                  <Link to={item.to} className="text-sm text-[#404040]/60 hover:text-primary transition-colors font-medium">
                     {item.label}
                   </Link>
                 </li>
@@ -53,8 +53,8 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p className="text-xs text-foreground/40">© 2025 Вам Лям! Все права защищены.</p>
-          <p className="text-xs text-foreground/40">B2B лидогенерация с 2018 года</p>
+          <p className="text-xs text-[#404040]/50">© 2025 Вам Лям! Все права защищены.</p>
+          <p className="text-xs text-[#404040]/50">B2B лидогенерация с 2018 года</p>
         </div>
       </div>
     </footer>

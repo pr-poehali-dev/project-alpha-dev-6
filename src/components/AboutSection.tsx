@@ -1,7 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
 import Icon from "@/components/ui/icon"
-import { EditableText } from "@/components/EditableText"
-import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 const values = [
   { icon: "ShieldCheck", title: "Гарантия качества", description: "Нецелевые лиды заменяем без вопросов — это наш стандарт, а не исключение" },
@@ -20,37 +18,33 @@ const stats = [
 ]
 
 export function AboutSection() {
-  const headRef = useScrollReveal()
-  const gridRef = useScrollReveal(0.1)
-  const statsRef = useScrollReveal(0.2)
-
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div ref={headRef} className="reveal text-center mb-16">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
             <Icon name="Sparkles" size={16} />
-            <EditableText as="span">О компании Вам Лям!</EditableText>
+            О компании Вам Лям!
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-foreground">
-            <EditableText as="span">Лидогенерация, которая</EditableText>{" "}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-[#404040]">
+            Лидогенерация, которая{" "}
             <span className="text-primary relative">
-              <EditableText as="span">работает</EditableText>
+              работает
               <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
                 <path d="M0 4C50 2 150 6 200 4" stroke="#392ae7" strokeWidth="2" />
               </svg>
             </span>
           </h2>
-          <EditableText as="p" className="text-lg text-foreground/65 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-lg text-[#404040]/70 max-w-3xl mx-auto leading-relaxed font-medium">
             С 2018 года мы помогаем B2B-компаниям в нишах частных инвестиций, франшиз и недвижимости получать стабильный поток целевых клиентов. Исходя из вашей ниши — определяем эффективный канал, считаем прогноз и запускаем уже завтра.
-          </EditableText>
+          </p>
         </div>
 
-        <div ref={gridRef} className="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {values.map((value, index) => (
             <Card
               key={index}
-              className="border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group bg-card"
+              className="border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group bg-white"
             >
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
@@ -58,10 +52,10 @@ export function AboutSection() {
                     <Icon name={value.icon} fallback="CheckCircle2" size={20} className="text-primary group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <EditableText as="h3" className="font-bold text-base mb-1.5 text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="font-bold text-base mb-1.5 text-[#404040] group-hover:text-primary transition-colors">
                       {value.title}
-                    </EditableText>
-                    <EditableText as="p" className="text-foreground/60 text-sm leading-relaxed">{value.description}</EditableText>
+                    </h3>
+                    <p className="text-[#404040]/65 text-sm leading-relaxed">{value.description}</p>
                   </div>
                 </div>
               </CardContent>
@@ -69,13 +63,13 @@ export function AboutSection() {
           ))}
         </div>
 
-        <div ref={statsRef} className="reveal grid grid-cols-2 md:grid-cols-4 gap-8 bg-background rounded-2xl p-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-[#f8f6fd] rounded-2xl p-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group cursor-default">
-              <EditableText as="div" className="text-3xl md:text-4xl font-black text-primary mb-2 group-hover:scale-110 transition-transform inline-block">
+              <div className="text-3xl md:text-4xl font-black text-primary mb-2 group-hover:scale-110 transition-transform">
                 {stat.number}
-              </EditableText>
-              <EditableText as="div" className="text-foreground/65 font-medium text-sm">{stat.label}</EditableText>
+              </div>
+              <div className="text-[#404040]/70 font-medium text-sm">{stat.label}</div>
             </div>
           ))}
         </div>

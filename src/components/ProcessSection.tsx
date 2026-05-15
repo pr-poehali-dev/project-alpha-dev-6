@@ -2,8 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Fragment } from "react"
 import { ArrowRight } from "lucide-react"
 import Icon from "@/components/ui/icon"
-import { EditableText } from "@/components/EditableText"
-import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 const steps = [
   {
@@ -37,29 +35,26 @@ const steps = [
 ]
 
 export function ProcessSection() {
-  const headRef = useScrollReveal()
-  const gridRef = useScrollReveal(0.1)
-
   return (
-    <section id="process" className="py-20 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+    <section id="process" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f8f6fd] relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div ref={headRef} className="reveal text-center mb-16">
+        <div className="text-center mb-16">
           <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-            <EditableText as="span">Как мы работаем</EditableText>
+            Как мы работаем
           </div>
-          <EditableText as="h2" className="font-display text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-foreground">От начала до первых лидов</EditableText>
-          <EditableText as="p" className="text-lg text-foreground/65 max-w-3xl mx-auto leading-relaxed font-medium">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-[#404040]">От начала до первых лидов</h2>
+          <p className="text-lg text-[#404040]/70 max-w-3xl mx-auto leading-relaxed font-medium">
             Прозрачный процесс без лишних шагов — вы видите каждый этап и всегда знаете, что происходит с вашим бюджетом.
-          </EditableText>
+          </p>
         </div>
 
-        <div ref={gridRef} className="reveal grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
           {steps.map((step, index) => (
             <Fragment key={index}>
               <Card
-                className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card border border-border hover:border-primary/30"
+                className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white border border-border hover:border-primary/30"
               >
                 <div className="absolute top-0 right-0 text-[100px] font-black text-primary/5 leading-none p-4 select-none">
                   {step.number}
@@ -68,12 +63,10 @@ export function ProcessSection() {
                   <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 w-fit group-hover:scale-110">
                     <Icon name={step.icon} fallback="CheckCircle2" size={22} />
                   </div>
-                  <CardTitle className="text-lg font-black text-foreground group-hover:text-primary transition-colors leading-snug">
-                    <EditableText as="span">{step.title}</EditableText>
-                  </CardTitle>
+                  <CardTitle className="text-lg font-black text-[#404040] group-hover:text-primary transition-colors leading-snug">{step.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <EditableText as="p" className="text-foreground/60 text-sm leading-relaxed">{step.description}</EditableText>
+                  <p className="text-[#404040]/65 text-sm leading-relaxed">{step.description}</p>
                 </CardContent>
               </Card>
               {index < steps.length - 1 && (

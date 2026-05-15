@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Send } from "lucide-react"
 import Icon from "@/components/ui/icon"
-import { EditableText } from "@/components/EditableText"
-import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -15,9 +13,6 @@ export function ContactSection() {
     niche: "",
     volume: "",
   })
-
-  const headRef = useScrollReveal()
-  const formRef = useScrollReveal(0.1)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,33 +27,31 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f8f6fd]">
       <div className="container mx-auto max-w-6xl">
-        <div ref={headRef} className="reveal text-center mb-14">
+        <div className="text-center mb-14">
           <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-            <EditableText as="span">Оставить заявку</EditableText>
+            Оставить заявку
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
-            <EditableText as="span">Получите </EditableText><span className="text-primary"><EditableText as="span">прогноз бесплатно</EditableText></span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#404040] mb-4">
+            Получите <span className="text-primary">прогноз бесплатно</span>
           </h2>
-          <EditableText as="p" className="text-foreground/65 text-lg max-w-2xl mx-auto font-medium">
+          <p className="text-[#404040]/70 text-lg max-w-2xl mx-auto font-medium">
             Оставьте заявку — мы свяжемся, изучим вашу нишу и рассчитаем реалистичный прогноз по лидам и сделкам.
-          </EditableText>
+          </p>
         </div>
 
-        <div ref={formRef} className="reveal grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-3">
-            <Card className="border border-border shadow-sm bg-card">
+            <Card className="border border-border shadow-sm bg-white">
               <CardHeader>
-                <CardTitle className="text-2xl font-black text-foreground">
-                  <EditableText as="span">Заявка на лидогенерацию</EditableText>
-                </CardTitle>
+                <CardTitle className="text-2xl font-black text-[#404040]">Заявка на лидогенерацию</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-bold text-foreground">
+                      <label htmlFor="name" className="text-sm font-bold text-[#404040]">
                         Имя *
                       </label>
                       <Input
@@ -72,7 +65,7 @@ export function ContactSection() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-bold text-foreground">
+                      <label htmlFor="phone" className="text-sm font-bold text-[#404040]">
                         Телефон *
                       </label>
                       <Input
@@ -88,7 +81,7 @@ export function ContactSection() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="niche" className="text-sm font-bold text-foreground">
+                    <label htmlFor="niche" className="text-sm font-bold text-[#404040]">
                       Ваша ниша *
                     </label>
                     <select
@@ -97,7 +90,7 @@ export function ContactSection() {
                       value={formData.niche}
                       onChange={handleChange}
                       required
-                      className="w-full h-10 px-3 rounded-md border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                      className="w-full h-10 px-3 rounded-md border border-border bg-white text-[#404040] text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                     >
                       <option value="">Выберите направление</option>
                       <option value="investments">Частные инвестиции</option>
@@ -107,7 +100,7 @@ export function ContactSection() {
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="volume" className="text-sm font-bold text-foreground">
+                    <label htmlFor="volume" className="text-sm font-bold text-[#404040]">
                       Желаемый объём лидов в месяц
                     </label>
                     <Input
@@ -123,7 +116,7 @@ export function ContactSection() {
                     <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     Получить бесплатный прогноз
                   </Button>
-                  <EditableText as="p" className="text-xs text-foreground/45 text-center">Свяжемся в течение 30 минут в рабочее время</EditableText>
+                  <p className="text-xs text-[#404040]/50 text-center">Свяжемся в течение 30 минут в рабочее время</p>
                 </form>
               </CardContent>
             </Card>
@@ -147,15 +140,15 @@ export function ContactSection() {
                 desc: "Менеджер на связи в рабочие часы для любых вопросов",
               },
             ].map((item, i) => (
-              <Card key={i} className="border border-border bg-card hover:border-primary/40 hover:shadow-md transition-all group">
+              <Card key={i} className="border border-border bg-white hover:border-primary/40 hover:shadow-md transition-all group">
                 <CardContent className="p-5">
                   <div className="flex items-start gap-4">
                     <div className="p-2.5 rounded-xl bg-primary/10 group-hover:bg-primary transition-all duration-300 flex-shrink-0">
                       <Icon name={item.icon} fallback="CheckCircle" size={20} className="text-primary group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <EditableText as="h3" className="font-black text-foreground mb-1">{item.title}</EditableText>
-                      <EditableText as="p" className="text-sm text-foreground/55">{item.desc}</EditableText>
+                      <h3 className="font-black text-[#404040] mb-1">{item.title}</h3>
+                      <p className="text-sm text-[#404040]/60">{item.desc}</p>
                     </div>
                   </div>
                 </CardContent>
